@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 250px;
+            /* background-color: red; */
+            margin: 10px auto;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            justify-content: space-between
+        }
+        ul>li>button{
+            width: 42px;
+            height: 23px;
+        }
+        #nihui{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li><button id="changeWidth">变宽</button></li>
+            <li><button id="changeHeight">变高</button></li>
+            <li><button id="changeColor">变色</button></li>
+            <li><button id="hide">隐藏</button></li>
+            <li><button id="resetting">重置</button></li>
+        </ul>
+        <div id="nihui">
+            
+        </div>
+    </div>
+<script>
+    let nihui = document.querySelector("#nihui")
+    let btn1 = document.querySelector("#changeWidth")
+    let btn2 = document.querySelector("#changeHeight")
+    let btn3 = document.querySelector("#changeColor")
+    let btn4 = document.querySelector("#hide")
+    let btn5 = document.querySelector("#resetting")
+
+    btn1.onclick = function(){
+        nihui.style.width = "200px"
+    }
+    btn2.onclick = function(){
+        nihui.style.height = "200px"
+    }
+    btn3.onclick = function(){
+        nihui.style.backgroundColor = "red"
+    }
+    btn4.onclick = function(){
+        nihui.style.display = "none"
+    }
+    btn5.onclick = function(){
+        nihui.style.cssText = ""
+    }
+</script>
+</body>
+</html>
