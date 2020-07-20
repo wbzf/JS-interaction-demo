@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul,li{
+            list-style: none;
+        }
+        body{
+            /*overflow: hidden;*/
+            width: 100%;
+        }
+        #box{
+            width: 100%;
+            /*height: 500px;*/
+            /*background-color: red;*/
+            border: 1px solid #ffffff;
+            box-sizing: border-box;
+        }
+        #top{
+            width: 230px;
+            height: 25px;
+            background-color: grey;
+            margin-left: 10px;
+            margin-top: 20px;
+            /*box-sizing: border-box;*/
+        }
+        ul{
+            width: 100%;
+            height: 100%;
+            background-color: #e8e8e8;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        ul>li:nth-child(1){
+            font-size: 12px;
+            margin-left: 20px;
+        }
+        ul>li:nth-child(2){
+            width: 10px;
+            height: 10px;
+            background-color: #2086b3;
+        }
+        ul>li:nth-child(3){
+            width: 10px;
+            height: 10px;
+            background-color: #e64c13;
+        }
+        ul>li:nth-child(4){
+            width: 10px;
+            height: 10px;
+            background-color: #b7a37a;
+            margin-right: 80px;
+        }
+        .nihui{
+            border: 1px solid black;
+        }
+        #center{
+            margin-top: 20px;
+            margin-left: 10px;
+            max-width: 100%;
+            max-height: 300px;
+            border: 1px solid #ffffff;
+            display: flex;
+            justify-content: space-between;
+            /*box-sizing: border-box;*/
+        }
+        #left{
+            width: 1130px;
+            height: 300px;
+            border: 2px solid #2086b3;
+        }
+        #right{
+            width: 300px;
+            height: 50px;
+            border: 2px solid #2086b3;
+        }
+        .x{
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        #bottom{
+            max-width: 100%;
+            height:30px;
+            margin:30px 10px 0px 10px;
+            background-color: #2086b3;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="top">
+        <ul>
+            <li>选择页面元素:</li>
+            <li class="nihui"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="center">
+        <div id="left"><span class="x">换肤测试</span></div>
+        <div id="right"><span class="x">换肤测试</span></div>
+    </div>
+    <div id="bottom"></div>
+</div>
+<script>
+    let oUl = document.querySelectorAll("ul>li")
+    let left = document.querySelector("#left")
+    let right = document.querySelector("#right")
+    let bottom = document.querySelector("#bottom")
+    let color = ["#2086b3","#e64c13","#b7a37a"]
+    let flag = 1
+    for(let i = 1; i < oUl.length; i++){
+        oUl[i].onclick = function () {
+            oUl[flag].className = ""
+            this.className = "nihui"
+            left.style.borderColor = color[i-1]
+            right.style.borderColor = color[i-1]
+            bottom.style.backgroundColor = color[i-1]
+            flag = i
+        }
+    }
+</script>
+</body>
+</html>
